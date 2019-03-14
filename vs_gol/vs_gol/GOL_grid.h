@@ -5,12 +5,16 @@ class GOL_grid {
 public:
 
 		// constructor to assign memory
-	GOL_grid(int m, int n, int id);
+	GOL_grid(int m, int n, int id, int px, int py);
 		// deconstructor to clear memory
 	~GOL_grid();
 
-		// dimensions
+		// wholegrid dimensions
+	int px = -1;
+	int py = -1;
 	int id = -1;
+
+		// subgrid dimensions
 	int width = -1;
 	int height = -1;
 	int size = -1;
@@ -23,8 +27,8 @@ public:
 
 		// iterate
 	//void send_receive();
-	void count_local();
 	//void count_boundaries();
+	void count_local();
 	void update_life();
 
 		// communcations
@@ -36,6 +40,8 @@ public:
 
 		// savefile
 	string filename;
+	stringstream ss;
 	ofstream file;
+	void save_state();
 
 };

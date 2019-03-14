@@ -2,8 +2,8 @@
 #include "GOL_grid.h"
 
 	// constructor to setup the grid and its memory
-GOL_grid::GOL_grid(int m, int n, int id) :
-	height(m), width(n), size(m*n), id(id) {
+GOL_grid::GOL_grid(int m, int n, int id, int px, int py) :
+	height(m), width(n), size(m*n), id(id), px(px), py(py) {
 
 		// set the memory
 	this->life_grid = new bool[this->size];
@@ -16,12 +16,36 @@ GOL_grid::GOL_grid(int m, int n, int id) :
 		// create the send MPI_datatypes
 	this->create_MPIrow();
 	this->create_MPIcol();
+
+		// open the save file
+	time_t now;
+	time(&now);
+	char date[26];
+	ctime_s(date, 26, &now);
+	date[7] = date[10] = date[13] = date[16] = '-';
+	this->filename = string(date).substr(4, 15) + "-" + to_string(id) + ".csv";
+	this->file.open(filename, ofstream::out);
+
+		// check file opened correctly
+	if (!this->file.is_open()) {
+		cout << "Error: could not open " << filename << "\n";
+		cout.flush();
+	}
+
+		// put in the header
+	this->ss	<< "# simulation ran on " << date
+				<< "# id, width, height, px, py\n"
+				<< this->id << "," << this->width << "," << this->height << "," 
+				<< this->px << "," << this->py << "\n";
+	this->file << this->ss.rdbuf();
 }
 
-	// deconstructor to clear memory
+
+	// deconstructor to clear memory and close file
 GOL_grid::~GOL_grid() {
 	delete[] this->life_grid;
 	delete[] this->adj_grid;
+	this->file.close();
 }
 
 
@@ -55,7 +79,6 @@ void GOL_grid::print_adj() {
 	cout << "\n";
 	cout.flush();
 }
-
 
 
 	// create the MPI datatype for sending a row of this grid
@@ -266,4 +289,16 @@ void GOL_grid::update_life() {
 			// reset the adj grid count
 		this->adj_grid[i] = 0;
 	}
+}
+
+
+void GOL_grid::save_state() {
+	for (int r = 0; r < this->height; r++) {
+		
+		this->ss << this->life_grid[r * this->width];  // write the first
+		for (int c = 1; c < this->width; c++) 
+			this->ss << "," << this->life_grid[r * this->width + c];
+		this->ss << "\n";
+	}
+	this->file << ss.rdbuf();
 }
