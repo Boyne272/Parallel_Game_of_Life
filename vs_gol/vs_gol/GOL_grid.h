@@ -5,43 +5,48 @@ class GOL_grid {
 public:
 
 		// constructor to assign memory
-	GOL_grid(int m, int n, int id, int px, int py);
+	GOL_grid(int id, int nprocs, int total_width, int total_height,
+			bool periodic, string save_directory);
+
 		// deconstructor to clear memory
 	~GOL_grid();
 
-		// wholegrid dimensions
-	int px = -1;
-	int py = -1;
-	int id = -1;
+		// domain info (some given, some found)
+	int tot_x = -1, tot_y = -1;		// domain dimenaions
+	int n_x = -1, n_y = -1;			// number of partitions
+	int my_row = -1, my_col = -1;	// subgrid position in domain
+	int id = -1, n_p = -1;			// id and number of processors
+	bool periodic;				    // is the domain periodic
 
-		// subgrid dimensions
-	int width = -1;
-	int height = -1;
-	int size = -1;
+		// subgrid data
+	int width = -1, height = -1, size = -1;
+	int iteration = 0;
+	bool* grid = nullptr;
 
-		// data
-	bool* life_grid;	// the grid of alive points
-	int* adj_grid;		// to count the number of alive adjasent points
-	void print_life(); 	// print the life boolan grid
-	void print_adj();  	// print the adjasent integer grid
+		// setup functions
+	void find_partitions();
+	void find_dimensions();
+	void find_neighbours();
+	void print();
 
 		// iterate
-	//void send_receive();
-	//void count_boundaries();
-	void count_local();
-	void update_life();
+	void send_receive();
+	void iterate();
 
 		// communcations
-	int neighbours[4];
-	bool* boundaries[4];
+	int neighbours[8];		// order [TL, T, TR, L, R, BL, B, BR]
+	bool* send_targs[8];
+	bool* recv_targs[8];
+	void find_targets();
 	MPI_Datatype Row, Col;
-	void create_MPIrow();
-	void create_MPIcol();
+	void create_MPIrows();
+	void create_MPIcols();
 
 		// savefile
-	string filename;
+	string directory;
 	stringstream ss;
 	ofstream file;
+	void create_config();
 	void save_state();
 
 };

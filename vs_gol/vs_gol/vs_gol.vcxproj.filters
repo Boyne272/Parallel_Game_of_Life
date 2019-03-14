@@ -26,9 +26,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="processors.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Test_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
