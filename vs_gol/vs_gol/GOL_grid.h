@@ -22,6 +22,7 @@ public:
 	int width = -1, height = -1, size = -1;
 	int iteration = 0;
 	bool* grid = nullptr;
+	bool* tmp_grid = nullptr;
 
 		// setup functions
 	void find_partitions();

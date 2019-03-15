@@ -26,7 +26,13 @@ int main(int argc, char *argv[]) {
 
 		// setup the subgrid
 	GOL_grid subgrid(id, p, width, height, false, save_directory);
-	init_random(subgrid.grid, subgrid.height, subgrid.width);
+
+	//init_random(subgrid.grid, subgrid.height, subgrid.width);
+
+	blinker_1(subgrid.grid, subgrid.width, 4, 4);
+	blinker_2(subgrid.grid, subgrid.width, 12, 4);
+	still_1(subgrid.grid, subgrid.width, 4, 12);
+	still_2(subgrid.grid, subgrid.width, 12, 12);
 
 	#ifdef synch
 		MPI_Barrier(MPI_COMM_WORLD);
@@ -48,14 +54,14 @@ int main(int argc, char *argv[]) {
 		// save the inital states
 	subgrid.save_state();
 
-
+		// iterate
 	for (int i = 0; i < iterations; i++) {
 
 		#ifdef synch
 			MPI_Barrier(MPI_COMM_WORLD);
 		#endif
 
-		subgrid.send_receive();
+		//subgrid.send_receive();
 		subgrid.iterate();
 		subgrid.save_state();
 

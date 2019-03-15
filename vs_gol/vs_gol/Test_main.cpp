@@ -1,67 +1,75 @@
 //#include "Header.h"
 //#include "GOL_grid.h"
+////#define to_time
+//#define synch
 //
-//	// here I am testing a single GOL grid with no communication sink boundaries
-////void main_processor(int p, int id) {
-//void test_basic() {
+//int main(int argc, char *argv[]) {
 //
-//		// create an example 10 x 12 grid
-//	GOL_grid test(10, 12, 0, 1, 1);
+//	// MPI overhead
+//	int id, p;
+//	MPI_Init(&argc, &argv);				// startup mpi
+//	MPI_Comm_rank(MPI_COMM_WORLD, &id);	// find this processors ID
+//	MPI_Comm_size(MPI_COMM_WORLD, &p);  // find the number of processors
+//	srand(time(NULL) + id * 10);		// seed the random generator
 //
-//	//init_random(test.life_grid, test.size);
-//	init_oscillator(test.life_grid, test.width, 1, 1);
-//	init_oscillator(test.life_grid, test.width, 5, 5);
-//	init_stat_corners(test.life_grid, test.width, test.height);
-//	
-//	
-//	cout << "Ititial setup:\n";
-//	test.print_life();
-//	test.print_adj();
 //
-//		// do an iteration
-//	cout << "In iteration 1:\n";
-//	test.count_local();
-//	test.print_adj();
+//		// unpack input parameters if they were passed
+//	assert(argc == 5 && "a save directory must be passed");
+//	int width = atoi(argv[1]);
+//	int height = atoi(argv[2]);
+//	int iterations = atoi(argv[3]);
+//	string save_directory = argv[4];
 //
-//	cout << "In Post Iteration 1:\n";
-//	test.update_life();
-//	test.print_life();
-//	test.print_adj();
+//#ifdef synch
+//	MPI_Barrier(MPI_COMM_WORLD);
+//#endif
 //
-//		// do another iteration
-//	cout << "In iteration 2:\n";
-//	test.count_local();
-//	test.print_adj();
+//	// setup the subgrid
+//	GOL_grid subgrid(id, p, width, height, false, save_directory);
+//	init_random(subgrid.grid, subgrid.height, subgrid.width);
 //
-//	cout << "In Post Iteration 2:\n";
-//	test.update_life();
-//	test.print_life();
-//	test.print_adj();
-//}
+//#ifdef synch
+//	MPI_Barrier(MPI_COMM_WORLD);
+//#endif
 //
-//	// here I am testing saving on a single GOL grid with no communication sink boundaries
-//void main_processor(int p, int id) {
-////void test_basic() {
+//	// set the config file
+//	if (id == 0) {
+//		subgrid.create_config();
 //
-//	cout << "running\n";
-//
-//		// create an example 10 x 12 grid
-//	GOL_grid test(50, 60, 0, 1, 1);
-//
-//	cout << test.filename;
-//
-//	init_random(test.life_grid, test.size);
-//	//init_oscillator(test.life_grid, test.width, 1, 1);
-//	//init_oscillator(test.life_grid, test.width, 5, 5);
-//	//init_stat_corners(test.life_grid, test.width, test.height);
-//	
-//		// save the inital state
-//	test.save_state();
-//
-//	for (int i = 0; i < 1000; i++) {
-//		test.count_local();
-//		test.update_life();
-//		test.save_state();
+//#ifdef to_time  // time if wanted
+//		double start = MPI_Wtime();
+//#endif // to_time
 //	}
+//
+//#ifdef synch
+//	MPI_Barrier(MPI_COMM_WORLD);
+//#endif
+//
+//	// save the inital states
+//	subgrid.save_state();
+//
+//
+//	for (int i = 0; i < iterations; i++) {
+//
+//#ifdef synch
+//		MPI_Barrier(MPI_COMM_WORLD);
+//#endif
+//
+//		//subgrid.send_receive();
+//		subgrid.iterate();
+//		subgrid.save_state();
+//
+//	}
+//
+//
+//#ifdef to_time  // print the time taken
+//	if (id == 0) {
+//		double time_taken = MPI_Wtime() - start;
+//		cout << "Time to run: " << time_taken << "s\n";
+//	}
+//#endif  // to_time	
+//
+//	// exit program
+//	MPI_Finalize();
 //
 //}

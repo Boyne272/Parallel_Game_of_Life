@@ -70,6 +70,12 @@ void GOL_grid::find_dimensions() {
 	height += 2;
 	width  += 2;
 	size = width * height;
+
+
+	#ifdef to_print
+		cout << id << "-dims(" << height << ", " << width << ")\n";
+		cout.flush();
+	#endif
 }
 
 
@@ -213,7 +219,8 @@ GOL_grid::GOL_grid(int id, int nprocs, int total_width, int total_height, bool p
 	this->find_targets();
 
 		// set the memory and initalise grid to be zero everywhere
-	this->grid = new bool[this->size];
+	this->grid		= new bool[this->size];
+	this->tmp_grid	= new bool[this->size];
 	for (int i = 0; i < this->size; i++)
 		this->grid[i] = 0;
 
@@ -240,7 +247,7 @@ void GOL_grid::create_config() {
 	ctime_s(date, 26, &now);
 
 		// what to put in the config file
-	ss << "Date \t\t" << date
+	ss << "Date \t\t\t" << date
 		<< "Processors \t\t" << n_p << "\n"
 		<< "Dimensions \t\t(" << tot_x << ", " << tot_y << ")\n"
 		<< "Partitions \t\t(" << n_x << ", " << n_y << ")\n";
@@ -295,32 +302,51 @@ void GOL_grid::iterate() {
 
 				// find the adjasent indexs
 			const int index = row * width + col;
-			const int adjs[8] = {	index - width - 1,  // top left
-									index - width,		// top
-									index - width + 1,	// top right
-									index - 1,			// left
-									index + 1,			// right
-									index + width - 1,	// bot left
-									index + width,		// bot
-									index + width + 1};	// bot right
+
+			//const int adjs[8] = {	index - width - 1,  // top left
+			//						index - width,		// top
+			//						index - width + 1,	// top right
+			//						index - 1,			// left
+			//						index + 1,			// right
+			//						index + width - 1,	// bot left
+			//						index + width,		// bot
+			//						index + width + 1};	// bot right
+
+			const int adjs[8] = {	(row - 1) * width + (col - 1),  // top left
+									(row - 1) * width + (col    ),	// top
+									(row - 1) * width + (col + 1),	// top right
+									(row    ) * width + (col - 1),	// left
+									(row    ) * width + (col + 1),	// right
+									(row + 1) * width + (col - 1),	// bot left
+									(row + 1) * width + (col    ),	// bot
+									(row + 1) * width + (col + 1)};	// bot right
 			
 				// count the living adjasents
 			cnt = 0;
 			for (int i = 0; i < 8; i++)
-				cnt += grid [adjs[i] ];
+				cnt += grid[ adjs[i] ];
 
-				// stay alive or revived
-			if (cnt == 3)
-				grid[index] = true;
+			if (cnt != 0) {
+				cout << row << "\t" << col << "\t" << cnt << '\n';
+				cout.flush();
+			}
 
-				// stay alive
-			else if ((cnt == 2) && (grid[index]))
-				grid[index] = true;
+				// find out where is alive
+			const bool revive = (cnt == 3);
+			const bool stay_alive = ((cnt == 2) && (grid[index]));
 
-				// die
+				// update the tmp_grid
+			if (revive || stay_alive)
+				tmp_grid[index] = true;
 			else
-				grid[index] = false;
+				tmp_grid[index] = false;
 		}
+
+		// swap the grids
+	bool* ptr = grid;
+	grid = tmp_grid;
+	tmp_grid = ptr;
+
 }
 
 

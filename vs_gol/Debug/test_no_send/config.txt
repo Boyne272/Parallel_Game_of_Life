@@ -1,0 +1,4 @@
+Date 			Fri Mar 15 13:51:40 2019
+Processors 		1
+Dimensions 		(40, 40)
+Partitions 		(1, 1)
