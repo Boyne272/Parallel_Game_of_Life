@@ -14,18 +14,22 @@ int main(int argc, char *argv[]) {
 
 
 		// unpack input parameters if they were passed
-	assert(argc == 5 && "a save directory must be passed");
+	assert(argc == 6 && "a save directory must be passed");
 	int width = atoi(argv[1]);
 	int height = atoi(argv[2]);
 	int iterations = atoi(argv[3]);
-	string save_directory = argv[4];
+	bool periodic = (bool)atoi(argv[4]);
+	string save_directory = argv[5];
 
 	#ifdef synch
 		MPI_Barrier(MPI_COMM_WORLD);
 	#endif
 
+	cout << id << "-periodic(" << periodic << ")\n";
+	cout.flush();
+
 		// setup the subgrid
-	GOL_grid subgrid(id, p, width, height, false, save_directory);
+	GOL_grid subgrid(id, p, width, height, periodic, save_directory);
 
 	//init_random(subgrid.grid, subgrid.height, subgrid.width);
 
@@ -72,7 +76,7 @@ int main(int argc, char *argv[]) {
 	if (id == 0) {
 		double time_taken = MPI_Wtime() - start;
 		ofstream file;
-		file.open(save_directory + "config.txt", ofstream::app);
+		file.open(save_directory + "_config.txt", ofstream::app);
 		file << "Iterations \t\t" << iterations << "\n"
 			 << "Run time \t\t" << time_taken << "\n";
 		file.close();

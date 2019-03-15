@@ -81,30 +81,37 @@ void GOL_grid::find_dimensions() {
 
 void GOL_grid::find_neighbours() {
 
-		// order [TL, T, TR, L, R, BL, B, BR]
-	const int rows[8] = { my_row - 1, my_row - 1, my_row - 1,
-						  my_row, my_row,
-						  my_row + 1, my_row + 1, my_row + 1 };
-	const int cols[8] = { my_col - 1, my_col, my_col + 1,
-						  my_col - 1, my_col + 1,
-						  my_col - 1, my_col, my_col + 1 };
+	// order [TL, T, TR, L, R, BL, B, BR]
+	// add the number of rows and cols to ensure +ve values for % operator
+	const int rows[8] = { my_row - 1 + n_y, my_row - 1 + n_y, my_row - 1 + n_y,
+						  my_row + n_y, my_row + n_y,
+						  my_row + 1 + n_y, my_row + 1 + n_y, my_row + 1 + n_y };
+	const int cols[8] = { my_col - 1 + n_x, my_col + n_x, my_col + 1 + n_x,
+						  my_col - 1 + n_x, my_col + 1 + n_x,
+						  my_col - 1 + n_x, my_col + n_x, my_col + 1 + n_x };
 
-		// for every neighbour
+	// for every neighbour
 	for (int i = 0; i < 8; i++) {
 
 		// set to be periodic by default
 		neighbours[i] = (rows[i] % n_y) * n_x + (cols[i] % n_x);
 
-			// if non-periodic and outside the grid, set to -1
+		// if non-periodic and outside the grid, set to -1
 		if (!periodic) {
 			if ((rows[i] < 0) || (rows[i] >= n_y))
 				neighbours[i] = -1;
-			else if ((cols[i] < 0) || (cols[i] >= n_x))
+			if ((cols[i] < 0) || (cols[i] >= n_x))
 				neighbours[i] = -1;
 		}
 	}
-}
 
+	#ifdef to_print
+		cout << id << "-neighbours(";
+		for (int i = 0; i < 8; i++)
+			cout << neighbours[i] << " ";
+		cout << ")\n";
+	#endif
+}
 
 	// create the MPI datatype for sending a row of this grid
 void GOL_grid::create_MPIrows() {
@@ -228,7 +235,7 @@ void GOL_grid::create_config() {
 		<< "Partitions \t\t(" << n_x << ", " << n_y << ")\n";
 
 		// create a config file & check it opened
-	file.open(directory + "config.txt", ofstream::out);
+	file.open(directory + "_config.txt", ofstream::out);
 	assert(file.is_open() && "could not find the given directory");
 	
 		// write and close
@@ -408,14 +415,14 @@ void GOL_grid::send_receive() {
 				cout.flush();
 			#endif
 
-			MPI_Isend(grid + send_offset[i], 1, types[i], targ, 0, MPI_COMM_WORLD, &dummy_req);
+			MPI_Isend(grid + send_offset[i], 1, types[i], targ, i, MPI_COMM_WORLD, &dummy_req);
 
 			#ifdef to_print
 				cout << id << "-receiving(" << i << " from " << neighbours[i] << ")\n";
 				cout.flush();
 			#endif
 
-			MPI_Irecv(grid + recv_offset[i], 1, types[i], targ, 0, MPI_COMM_WORLD, reqs + i);
+			MPI_Irecv(grid + recv_offset[i], 1, types[i], targ, 7-i, MPI_COMM_WORLD, reqs + i);
 
 		}
 		else {

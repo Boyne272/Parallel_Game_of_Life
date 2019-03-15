@@ -1,3 +1,2 @@
-﻿  main.cpp
-c:\users\richard\onedrive - imperial college london\_acse-6\project_3\vs_gol\vs_gol\main.cpp(13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  GOL_grid.cpp
   vs_gol.vcxproj -> C:\Users\Richard\OneDrive - Imperial College London\_ACSE-6\project_3\vs_gol\Debug\vs_gol.exe
