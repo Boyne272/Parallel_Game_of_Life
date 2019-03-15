@@ -1,7 +1,7 @@
 #include "Header.h"
 #include "GOL_grid.h"
 #define to_print
-//#define synch
+#define synch
 
 	// finds the optimal partitioning with the requierment that
 	// every section has matching edge neighbours
@@ -175,31 +175,6 @@ void GOL_grid::create_MPIcols() {
 }
 
 
-void GOL_grid::find_targets() {
-		
-		// communcation order [TL, T, TR, L, R, BL, B, BR]
-
-		// corners for the send targets
-	send_targs[0] = grid + width + 1;			// top left corn
-	send_targs[1] = grid + width + 1;			// top row
-	send_targs[2] = grid + 2*width - 2;			// top right corn
-	send_targs[3] = grid + width + 1;			// left col
-	send_targs[4] = grid + 2*width - 2;			// right col
-	send_targs[5] = grid + size - 2*width + 1;	// bot left corn
-	send_targs[6] = grid + size - 2*width + 1;	// bot row
-	send_targs[7] = grid + size - width - 2;	// bot right corn
-
-
-		// corners for the receive targets
-	recv_targs[0] = grid + size - 1;			// bot right corn
-	recv_targs[1] = grid + size - width + 1;	// bot row
-	recv_targs[2] = grid + size - width;		// bot left corn
-	recv_targs[3] = grid + 2*width - 1;			// right col
-	recv_targs[4] = grid + width;				// left col
-	recv_targs[5] = grid + width - 1;			// top right corn
-	recv_targs[6] = grid + 1;					// top row
-	recv_targs[7] = grid;						// top left corn
-}
 
 
 	// constructor to setup the grid and its memory
@@ -282,7 +257,6 @@ void GOL_grid::print() {
 }
 
 
-
 	// upadte the life grid to the cells that should be alive now
 void GOL_grid::iterate() {
 
@@ -325,11 +299,6 @@ void GOL_grid::iterate() {
 			cnt = 0;
 			for (int i = 0; i < 8; i++)
 				cnt += grid[ adjs[i] ];
-
-			if (cnt != 0) {
-				cout << row << "\t" << col << "\t" << cnt << '\n';
-				cout.flush();
-			}
 
 				// find out where is alive
 			const bool revive = (cnt == 3);
@@ -390,6 +359,32 @@ void GOL_grid::save_state() {
 }
 
 
+	// find the offsets that are needed for communcations
+void GOL_grid::find_targets() {
+		
+		// communcation order [TL, T, TR, L, R, BL, B, BR]
+
+		// ofsets to the corners for the send targets
+	send_offset[0] = width + 1;				// top left corn
+	send_offset[1] = width + 1;				// top row
+	send_offset[2] = 2*width - 2;			// top right corn
+	send_offset[3] = width + 1;				// left col
+	send_offset[4] = 2*width - 2;			// right col
+	send_offset[5] = size - 2*width + 1;	// bot left corn
+	send_offset[6] = size - 2*width + 1;	// bot row
+	send_offset[7] = size - width - 2;		// bot right corn
+
+		// ofsets to the corners for the receive targets
+	recv_offset[0] = 0;					// top left corn
+	recv_offset[1] = 1;					// top row
+	recv_offset[2] = width - 1;			// top right corn
+	recv_offset[3] = width;				// left col
+	recv_offset[4] = 2*width - 1;		// right col
+	recv_offset[5] = size - width;		// bot left corn
+	recv_offset[6] = size - width + 1;	// bot row
+	recv_offset[7] = size - 1;			// bot right corn
+}
+
 	
 void GOL_grid::send_receive() {
 
@@ -397,8 +392,7 @@ void GOL_grid::send_receive() {
 	// neighbour order [TL, T, TR, L, R, BL, B, BR]
 	// send order [TL, TR, BL, BR]
 
-
-	MPI_Request* reqs[8];
+	MPI_Request reqs[8];
 	MPI_Request dummy_req;
 	MPI_Datatype types[8] = { MPI_BYTE, this->Row, MPI_BYTE , this->Col, this->Col,
 							  MPI_BYTE, this->Row, MPI_BYTE };
@@ -409,20 +403,19 @@ void GOL_grid::send_receive() {
 
 			#ifdef to_print
 				cout << id << "-sending(" << i << " to " << targ << ")\n";
-				//cout << id << "-value(" << (bool)send_targs[i] << ")\n";
+			if (*(grid + send_offset[i]) == 1)
+				cout << id << "-value(" << send_offset[i] << "," << *(grid + send_offset[i]) << ")\n";
 				cout.flush();
 			#endif
 
-			//MPI_Isend(send_targs[i], 1, types[i], targ, i, MPI_COMM_WORLD, &dummy_req);
-			MPI_Isend(grid, 1, types[i], targ, i, MPI_COMM_WORLD, &dummy_req);
+			MPI_Isend(grid + send_offset[i], 1, types[i], targ, 0, MPI_COMM_WORLD, &dummy_req);
 
 			#ifdef to_print
 				cout << id << "-receiving(" << i << " from " << neighbours[i] << ")\n";
 				cout.flush();
 			#endif
 
-			//MPI_Irecv(recv_targs[i], 1, types[i], targ, i, MPI_COMM_WORLD, reqs[i]);
-			MPI_Irecv(grid + i, 1, MPI_BYTE, targ, i, MPI_COMM_WORLD, reqs[i]);
+			MPI_Irecv(grid + recv_offset[i], 1, types[i], targ, 0, MPI_COMM_WORLD, reqs + i);
 
 		}
 		else {
@@ -433,8 +426,9 @@ void GOL_grid::send_receive() {
 			#endif
 
 				// send a dud message to yourself to mark request as complete
-			//MPI_Isend(send_targs[i], 1, MPI_BYTE, id, i, MPI_COMM_WORLD, reqs[i]);
-			//MPI_Request_free(reqs[i]);
+			MPI_Isend(nullptr, 0, MPI_BYTE, id, i, MPI_COMM_WORLD, reqs + i);
+			MPI_Request_free(reqs + i);
+
 		}
 
 		#ifdef synch
@@ -442,91 +436,12 @@ void GOL_grid::send_receive() {
 		#endif
 	}
 
-	//#ifdef to_print
-	//	cout << id << "-sending(0)\n";
-	//	cout.flush();
-	//#endif
-	//	// send top left corner recv bot right corner
-	//i = 0;
-	//t = 7;  // tag is always the recv_target index
-	//MPI_Isend(send_targs[i], 1, MPI_BYTE, neighbours[0], t, MPI_COMM_WORLD, &dummy_req);
-	//MPI_Irecv(recv_targs[t], 1, MPI_BYTE, neighbours[t], t, MPI_COMM_WORLD, reqs[t]);
-	//#ifdef to_print
-	//	cout << id << "-sending(1)\n";
-	//	cout.flush();
-	//#endif
-	//	// send top row rev bot row
-	//i = 0;
-	//t = 6;
-	//MPI_Isend(send_targs[i], 1, this->Row, neighbours[1], t, MPI_COMM_WORLD, &dummy_req);
-	//MPI_Irecv(recv_targs[t], 1, this->Row, neighbours[t], t, MPI_COMM_WORLD, reqs[t]);
-	//
-	//#ifdef to_print
-	//	cout << id << "-sending(2)\n";
-	//	cout.flush();
-	//#endif
-	//	// send top right corner recv bot left corner 
-	//i = 1;
-	//t = 5;
-	//MPI_Isend(send_targs[i], 1, MPI_BYTE, neighbours[2], t, MPI_COMM_WORLD, &dummy_req);
-	//MPI_Irecv(recv_targs[t], 1, MPI_BYTE, neighbours[t], t, MPI_COMM_WORLD, reqs[t]);
-	//
-	//#ifdef to_print
-	//	cout << id << "-sending(3)\n";
-	//	cout.flush();
-	//#endif
-	//	// send left column recv right column
-	//i = 0;
-	//t = 4;
-	//MPI_Isend(send_targs[i], 1, this->Col, neighbours[3], t, MPI_COMM_WORLD, &dummy_req);
-	//MPI_Irecv(recv_targs[t], 1, this->Col, neighbours[t], t, MPI_COMM_WORLD, reqs[t]);
-	//
-	//#ifdef to_print
-	//	cout << id << "-sending(4)\n";
-	//	cout.flush();
-	//#endif
-	//	// send right column recv left column
-	//i = 1;
-	//t = 3;
-	//MPI_Isend(send_targs[i], 1, this->Col, neighbours[4], t, MPI_COMM_WORLD, &dummy_req);
-	//MPI_Irecv(recv_targs[t], 1, this->Col, neighbours[t], t, MPI_COMM_WORLD, reqs[t]);
-	//
-	//#ifdef to_print
-	//	cout << id << "-sending(5)\n";
-	//	cout.flush();
-	//#endif
-	//	// send bot left corner recv top right corner
-	//i = 2;
-	//t = 2;
-	//MPI_Isend(send_targs[i], 1, MPI_BYTE, neighbours[5], t, MPI_COMM_WORLD, &dummy_req);
-	//MPI_Irecv(recv_targs[t], 1, MPI_BYTE, neighbours[t], t, MPI_COMM_WORLD, reqs[t]);
-	//		
-	//#ifdef to_print
-	//	cout << id << "-sending(6)\n";
-	//	cout.flush();
-	//#endif
-	//	// send bot row recv top row
-	//i = 2;
-	//t = 1;
-	//MPI_Isend(send_targs[i], 1, this->Row, neighbours[6], t, MPI_COMM_WORLD, &dummy_req);
-	//MPI_Irecv(recv_targs[t], 1, this->Row, neighbours[t], t, MPI_COMM_WORLD, reqs[t]);
-	//		
-	//#ifdef to_print
-	//	cout << id << "-sending(7)\n";
-	//	cout.flush();
-	//#endif
-	//	// send bot right corner recv top left corner
-	//i = 3;
-	//t = 0;
-	//MPI_Isend(send_targs[i], 1, MPI_BYTE, neighbours[7], t, MPI_COMM_WORLD, &dummy_req);
-	//MPI_Irecv(recv_targs[t], 1, MPI_BYTE, neighbours[t], t, MPI_COMM_WORLD, reqs[t]);
-
 	#ifdef to_print
 		cout << id << "-waiting\n";
 		cout.flush();
 	#endif
 
-	MPI_Waitall(8, reqs[0], MPI_STATUSES_IGNORE);
+	MPI_Waitall(8, reqs, MPI_STATUSES_IGNORE);
 
 	#ifdef to_print
 		cout << id << "-received\n";

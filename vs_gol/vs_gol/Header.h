@@ -16,3 +16,5 @@ void blinker_1(bool* grid, int grid_width, int row, int col);
 void blinker_2(bool* grid, int grid_width, int row, int col);
 void still_1(bool* grid, int grid_width, int row, int col);
 void still_2(bool* grid, int grid_width, int row, int col);
+void glider(bool* grid, int grid_width, int row, int col);
+void fill_corns(bool* grid, int grid_width, int grid_heights);

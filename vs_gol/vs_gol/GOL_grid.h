@@ -36,8 +36,8 @@ public:
 
 		// communcations
 	int neighbours[8];		// order [TL, T, TR, L, R, BL, B, BR]
-	bool* send_targs[8];
-	bool* recv_targs[8];
+	int send_offset[8];
+	int recv_offset[8];
 	void find_targets();
 	MPI_Datatype Row, Col;
 	void create_MPIrows();

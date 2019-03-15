@@ -47,3 +47,20 @@ void still_2(bool* grid, int grid_width, int row, int col) {
 				   row * grid_width + col - 1})
 		grid[i] = true;
 }
+
+
+void glider(bool* grid, int grid_width, int row, int col) {
+	for (int i : {(row - 1) * grid_width + col - 1,
+				  (row + 1) * grid_width + col,
+				  (row + 1) * grid_width + col - 1,
+				   row * grid_width + col,
+				   row * grid_width + col + 1})
+	grid[i] = true;
+}
+
+void fill_corns(bool* grid, int grid_width, int grid_height) {
+	grid[grid_width + 1] = true;
+	grid[2*grid_width - 2] = true;
+	grid[(grid_width - 2) * grid_height + 1] = true;
+	grid[(grid_width - 1) * grid_height - 2] = true;
+}
