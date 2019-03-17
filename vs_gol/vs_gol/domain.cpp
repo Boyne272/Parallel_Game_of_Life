@@ -5,9 +5,9 @@
 
 	// basic 50% chance random fill
 void init_random(bool* grid, int rows, int cols) {
-	for (int i = 1; i < rows; i++)
-		for (int j = 1; j < cols; j++)
-			grid[i * rows + j] = rand() % 2;
+	for (int i = 1; i < rows-1; i++)
+		for (int j = 1; j < cols-1; j++)
+			grid[i * cols + j] = rand() % 2;
 }
 
 	// place a stick oscillator at row, col

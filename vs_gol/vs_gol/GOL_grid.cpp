@@ -1,7 +1,9 @@
 #include "Header.h"
 #include "GOL_grid.h"
-#define to_print
-#define synch
+//#define to_print
+//#define to_print_all
+//#define synch
+#define CX1
 
 	// finds the optimal partitioning with the requierment that
 	// every section has matching edge neighbours
@@ -44,9 +46,15 @@ void GOL_grid::find_partitions() {
 			}
 		}
 
+	#ifdef to_print
+		cout << id << "-patritions(" << n_y << ", " << n_x << ")\n";
+		cout.flush();
+	#endif
+
 		// find the row and col of this id in the domain
 	my_row = id / n_x;
 	my_col = id % n_x;
+
 }
 
 
@@ -61,9 +69,9 @@ void GOL_grid::find_dimensions() {
 	const int y_rem = tot_y % n_y;
 
 		// equally distribute the remainders
-	if (x_rem > my_row)
-		width++;
 	if (x_rem > my_col)
+		width++;
+	if (y_rem > my_row)
 		height++;
 
 		// pad the width and height to include buffer regions
@@ -73,7 +81,9 @@ void GOL_grid::find_dimensions() {
 
 
 	#ifdef to_print
-		cout << id << "-dims(" << height << ", " << width << ")\n";
+		cout << id << "-dims(" << height-2 << ", " << width-2 << ")\n";
+		//cout << id << "-padd(" << height << ", " << width << ")\n";
+		//cout << id << "-remainders(" << x_rem << ", " << y_rem << ")\n";
 		cout.flush();
 	#endif
 }
@@ -83,25 +93,39 @@ void GOL_grid::find_neighbours() {
 
 	// order [TL, T, TR, L, R, BL, B, BR]
 	// add the number of rows and cols to ensure +ve values for % operator
-	const int rows[8] = { my_row - 1 + n_y, my_row - 1 + n_y, my_row - 1 + n_y,
-						  my_row + n_y, my_row + n_y,
-						  my_row + 1 + n_y, my_row + 1 + n_y, my_row + 1 + n_y };
-	const int cols[8] = { my_col - 1 + n_x, my_col + n_x, my_col + 1 + n_x,
-						  my_col - 1 + n_x, my_col + 1 + n_x,
-						  my_col - 1 + n_x, my_col + n_x, my_col + 1 + n_x };
+	//const int rows[8] = { my_row - 1 + n_y, my_row - 1 + n_y, my_row - 1 + n_y,
+	//					  my_row + n_y, my_row + n_y,
+	//					  my_row + 1 + n_y, my_row + 1 + n_y, my_row + 1 + n_y };
+	//const int cols[8] = { my_col - 1 + n_x, my_col + n_x, my_col + 1 + n_x,
+	//					  my_col - 1 + n_x, my_col + 1 + n_x,
+	//					  my_col - 1 + n_x, my_col + n_x, my_col + 1 + n_x };	
+	const int rows[8] = { my_row - 1, my_row - 1, my_row - 1,
+						  my_row, my_row,
+						  my_row + 1, my_row + 1, my_row + 1 };
+	const int cols[8] = { my_col - 1, my_col, my_col + 1,
+						  my_col - 1, my_col + 1,
+						  my_col - 1, my_col, my_col + 1 };
 
 	// for every neighbour
 	for (int i = 0; i < 8; i++) {
 
-		// set to be periodic by default
-		neighbours[i] = (rows[i] % n_y) * n_x + (cols[i] % n_x);
+		if (periodic) {
+			// mod to wrap around (after + row_max/col_max to prevent negative modulos)
+			const int mod_row = (rows[i] + n_y) % n_y;
+			const int mod_col = (cols[i] + n_x) % n_x;
+			neighbours[i] = mod_row * n_x + mod_col;
+		}
 
-		// if non-periodic and outside the grid, set to -1
-		if (!periodic) {
+		// if non-periodic set outside grid pointes to -1
+		else {
 			if ((rows[i] < 0) || (rows[i] >= n_y))
 				neighbours[i] = -1;
-			if ((cols[i] < 0) || (cols[i] >= n_x))
+
+			else if ((cols[i] < 0) || (cols[i] >= n_x))
 				neighbours[i] = -1;
+
+			else 
+				neighbours[i] = rows[i] * n_x + cols[i];
 		}
 	}
 
@@ -112,6 +136,7 @@ void GOL_grid::find_neighbours() {
 		cout << ")\n";
 	#endif
 }
+
 
 	// create the MPI datatype for sending a row of this grid
 void GOL_grid::create_MPIrows() {
@@ -183,7 +208,6 @@ void GOL_grid::create_MPIcols() {
 
 
 
-
 	// constructor to setup the grid and its memory
 GOL_grid::GOL_grid(int id, int nprocs, int total_width, int total_height, bool periodic, 
 	string save_directory) : id(id), n_p(nprocs), tot_x(total_width), tot_y(total_height), 
@@ -223,16 +247,20 @@ GOL_grid::~GOL_grid() {
 void GOL_grid::create_config() {
 		
 		// find the current date as a directory name
-	time_t now;
-	time(&now);
-	char date[26];
-	ctime_s(date, 26, &now);
+	#ifdef CX1
+		time_t now;
+		time(&now);
+		char date[26];
+		ctime_s(date, 26, &now);
+	#else
+		char date[26] = "not avaibale on CX1 :( \n";
+	#endif
 
 		// what to put in the config file
 	ss << "Date \t\t\t" << date
 		<< "Processors \t\t" << n_p << "\n"
-		<< "Dimensions \t\t(" << tot_x << ", " << tot_y << ")\n"
-		<< "Partitions \t\t(" << n_x << ", " << n_y << ")\n";
+		<< "Dimensions \t\t(" << tot_y << ", " << tot_x << ")\n"
+		<< "Partitions \t\t(" << n_y << ", " << n_x << ")\n";
 
 		// create a config file & check it opened
 	file.open(directory + "_config.txt", ofstream::out);
@@ -243,8 +271,10 @@ void GOL_grid::create_config() {
 	file.close();
 
 		// print
-	cout << id << "-saved(config)\n";
-	cout.flush();
+	#ifdef to_print
+		cout << id << "-saved(config)\n";
+		cout.flush();
+	#endif // to_print
 }
 
 
@@ -329,7 +359,7 @@ void GOL_grid::iterate() {
 	// save the current state in a new file
 void GOL_grid::save_state() {
 
-	#ifdef to_print
+	#ifdef to_print_all
 		cout << id << "-saving(" << iteration << ")\n";
 		cout.flush();
 	#endif
@@ -408,16 +438,14 @@ void GOL_grid::send_receive() {
 		const int targ = neighbours[i];
 		if (targ != -1) {
 
-			#ifdef to_print
+			#ifdef to_print_all
 				cout << id << "-sending(" << i << " to " << targ << ")\n";
-			if (*(grid + send_offset[i]) == 1)
-				cout << id << "-value(" << send_offset[i] << "," << *(grid + send_offset[i]) << ")\n";
 				cout.flush();
 			#endif
 
 			MPI_Isend(grid + send_offset[i], 1, types[i], targ, i, MPI_COMM_WORLD, &dummy_req);
 
-			#ifdef to_print
+			#ifdef to_print_all
 				cout << id << "-receiving(" << i << " from " << neighbours[i] << ")\n";
 				cout.flush();
 			#endif
@@ -427,7 +455,7 @@ void GOL_grid::send_receive() {
 		}
 		else {
 
-			#ifdef to_print
+			#ifdef to_print_all
 				cout << id << "-skipping(" << i << ")\n";
 				cout.flush();
 			#endif
@@ -443,15 +471,15 @@ void GOL_grid::send_receive() {
 		#endif
 	}
 
-	#ifdef to_print
-		cout << id << "-waiting\n";
+	#ifdef to_print_all
+		cout << id << "-waiting(" << iteration << ")\n";
 		cout.flush();
 	#endif
 
 	MPI_Waitall(8, reqs, MPI_STATUSES_IGNORE);
 
 	#ifdef to_print
-		cout << id << "-received\n";
+		cout << id << "-received" << iteration << "\n";
 		cout.flush();
 	#endif
 
