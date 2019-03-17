@@ -4,11 +4,11 @@
 class GOL_grid {
 public:
 
-		// constructor to assign memory
+		// constructor to setup the grid and its memory
 	GOL_grid(int id, int nprocs, int total_width, int total_height,
 			bool periodic, string save_directory);
 
-		// deconstructor to clear memory
+		// deconstructor to clear dynamic memory
 	~GOL_grid();
 
 		// domain info (some given, some found)
@@ -25,29 +25,31 @@ public:
 	bool* tmp_grid = nullptr;
 
 		// setup functions
-	void find_partitions();
-	void find_dimensions();
-	void find_neighbours();
-	void print();
+	void find_partitions();		// finds the optimal regular grid partitioning for domain
+	void find_dimensions();		// find the padded dimensions of this processors subgrid
+	void find_neighbours();		// find the neighbours to message (changes if periodic or not)
 
 		// iterate
-	void send_receive();
-	void iterate();
+	void send_receive();	// send boundary data to adjasent processors
+	void iterate();			// iterate the life grid
 
 		// communcations
-	int neighbours[8];		// order [TL, T, TR, L, R, BL, B, BR]
-	int send_offset[8];
-	int recv_offset[8];
-	void find_targets();
-	MPI_Datatype Row, Col;
-	void create_MPIrows();
-	void create_MPIcols();
+	int neighbours[8];		// message order [TL, T, TR, L, R, BL, B, BR]
+	int send_offset[8];		// the offsets from grid pointer for each send message
+	int recv_offset[8];		// the offsets from grid pointer for each recv message
+	void find_targets();	// find the send and recv offsets
+	MPI_Datatype Row, Col;	// datatypes for sending rows and columns
+	void create_MPIrows();	// create datatype for sending an interior row
+	void create_MPIcols();	// create datatype for sending an interior column
+
+		// misc
+	void print();	// print the current subgrid state
 
 		// savefile
-	string directory;
-	stringstream ss;
-	ofstream file;
-	void create_config();
-	void save_state();
+	string directory;		// the location to save results
+	stringstream ss;		// buffer for writing to a file
+	ofstream file;			// file vairable to save with
+	void create_config();	// create the config file and test save directory exists
+	void save_state();		// save the current state in a new file
 
 };

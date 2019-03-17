@@ -1,17 +1,18 @@
 #include "Header.h"
 #include "GOL_grid.h"
-//#define to_print
-//#define to_print_all
-//#define synch
-#define CX1
 
-	// finds the optimal partitioning with the requierment that
-	// every section has matching edge neighbours
+//#define to_print		// print when each processor enters each section
+//#define to_print_all	// print explicity what each processor is doing
+//#define synch			// synch the processes at every stage
+#define CX1				// disable ctime_s in create_config() for gcc compiling
+
+
+	// finds the optimal regular grid partitioning for domain
 void GOL_grid::find_partitions() {
 
 	int comm_len; // the length of edges we need to communicate
 
-	// split into strips as a defualt
+		// split into strips as a defualt
 	if (tot_x >= tot_y) {  // if x is longer, split along x direction
 		n_x = n_p;
 		n_y = 1;
@@ -21,24 +22,24 @@ void GOL_grid::find_partitions() {
 		n_y = n_p;
 	}
 
-	// this is the length of internal edges
+		// this is the length of internal edges
 	comm_len = n_x * tot_y + n_y * tot_x;
 
-	// for every factor of np
+		// for every factor of np
 	for (int i = 2; i < int(sqrt(n_p) + 1); i++)
 		if (n_p % i == 0) {
 
 			const int fac1 = i;
 			const int fac2 = n_p / i;
 
-			// if the new comm_len would be less than the old
+				// if the new comm_len would be less than the old use it
 			if (fac1 * tot_y + fac2 * tot_x < comm_len) {
 				n_x = fac1;
 				n_y = fac2;
 				comm_len = n_x * tot_y + n_y * tot_x;
 			}
 
-			// do the same check for the other way around
+				// do the same check for flipped axis
 			if (fac2 * tot_y + fac1 * tot_x < comm_len) {
 				n_x = fac2;
 				n_y = fac1;
@@ -58,6 +59,7 @@ void GOL_grid::find_partitions() {
 }
 
 
+	// find the padded dimensions of this processors subgrid
 void GOL_grid::find_dimensions() {
 
 		// workout the cells dimensions
@@ -79,7 +81,6 @@ void GOL_grid::find_dimensions() {
 	width  += 2;
 	size = width * height;
 
-
 	#ifdef to_print
 		cout << id << "-dims(" << height-2 << ", " << width-2 << ")\n";
 		//cout << id << "-padd(" << height << ", " << width << ")\n";
@@ -89,16 +90,10 @@ void GOL_grid::find_dimensions() {
 }
 
 
+	// find the neighbours to message (changes if periodic or not)
 void GOL_grid::find_neighbours() {
 
-	// order [TL, T, TR, L, R, BL, B, BR]
-	// add the number of rows and cols to ensure +ve values for % operator
-	//const int rows[8] = { my_row - 1 + n_y, my_row - 1 + n_y, my_row - 1 + n_y,
-	//					  my_row + n_y, my_row + n_y,
-	//					  my_row + 1 + n_y, my_row + 1 + n_y, my_row + 1 + n_y };
-	//const int cols[8] = { my_col - 1 + n_x, my_col + n_x, my_col + 1 + n_x,
-	//					  my_col - 1 + n_x, my_col + 1 + n_x,
-	//					  my_col - 1 + n_x, my_col + n_x, my_col + 1 + n_x };	
+		// message order [TL, T, TR, L, R, BL, B, BR]
 	const int rows[8] = { my_row - 1, my_row - 1, my_row - 1,
 						  my_row, my_row,
 						  my_row + 1, my_row + 1, my_row + 1 };
@@ -106,18 +101,18 @@ void GOL_grid::find_neighbours() {
 						  my_col - 1, my_col + 1,
 						  my_col - 1, my_col, my_col + 1 };
 
-	// for every neighbour
+		// for every neighbour
 	for (int i = 0; i < 8; i++) {
 
 		if (periodic) {
-			// mod to wrap around (after + row_max/col_max to prevent negative modulos)
+				// mod to wrap around (after + max to prevent negative modulus)
 			const int mod_row = (rows[i] + n_y) % n_y;
 			const int mod_col = (cols[i] + n_x) % n_x;
 			neighbours[i] = mod_row * n_x + mod_col;
 		}
 
-		// if non-periodic set outside grid pointes to -1
 		else {
+				// if non-periodic set outside grid pointes to -1
 			if ((rows[i] < 0) || (rows[i] >= n_y))
 				neighbours[i] = -1;
 
@@ -163,6 +158,7 @@ void GOL_grid::create_MPIrows() {
 		offsets[i] = address - add_start;
 	}
 
+		// create the datatype
 	MPI_Type_create_struct(len, block_lengths, offsets, typelist, &(this->Row));
 	MPI_Type_commit(&(this->Row));
 		
@@ -173,10 +169,10 @@ void GOL_grid::create_MPIrows() {
 }
 
 
-	// create the MPI datatype for sending a column of this grid 
-	// (same as create_MPIrow but with a different indexing)
+	// create MPI col datatype (same as above but with a different indexing)
 void GOL_grid::create_MPIcols() {
 
+		// find the width that we want to send
 	const int len = this->height - 2;
 
 		// length and type of each peice of data
@@ -191,12 +187,14 @@ void GOL_grid::create_MPIcols() {
 	MPI_Aint address, add_start;
 	MPI_Get_address(this->grid, &add_start);
 
+		// find MPI friendly addresses
 	MPI_Aint * offsets = new MPI_Aint[len];
 	for (int i = 0; i < len; i++) {
 		MPI_Get_address(this->grid + i * width, &address);
 		offsets[i] = address - add_start;
 	}
 
+		// create the datatype
 	MPI_Type_create_struct(len, block_lengths, offsets, typelist, &(this->Col));
 	MPI_Type_commit(&(this->Col));
 
@@ -205,7 +203,6 @@ void GOL_grid::create_MPIcols() {
 	delete[] block_lengths;
 	delete[] typelist;
 }
-
 
 
 	// constructor to setup the grid and its memory
@@ -237,16 +234,17 @@ GOL_grid::GOL_grid(int id, int nprocs, int total_width, int total_height, bool p
 }
 
 
-	// deconstructor to clear memory and close file
+	// deconstructor to clear dynamic memory
 GOL_grid::~GOL_grid() {
 	delete[] this->grid;
+	delete[] this->tmp_grid;
 }
 
 
 	// create the config file and test save directory exists
 void GOL_grid::create_config() {
 		
-		// find the current date as a directory name
+		// find the current date for config file
 	#ifdef CX1
 		time_t now;
 		time(&now);
@@ -278,7 +276,7 @@ void GOL_grid::create_config() {
 }
 
 
-	// print the life boolan grid (same as below with different ptr)
+	// print the current subgrid state
 void GOL_grid::print() {
 		
 		// print a header
@@ -294,7 +292,7 @@ void GOL_grid::print() {
 }
 
 
-	// upadte the life grid to the cells that should be alive now
+	// iterate the life grid
 void GOL_grid::iterate() {
 
 		// increament the iteration counter
@@ -311,18 +309,8 @@ void GOL_grid::iterate() {
 	for (int row = 1; row < height - 1; row++)
 		for (int col = 1; col < width - 1; col++) {
 
-				// find the adjasent indexs
+				// find the adjasent and current points index
 			const int index = row * width + col;
-
-			//const int adjs[8] = {	index - width - 1,  // top left
-			//						index - width,		// top
-			//						index - width + 1,	// top right
-			//						index - 1,			// left
-			//						index + 1,			// right
-			//						index + width - 1,	// bot left
-			//						index + width,		// bot
-			//						index + width + 1};	// bot right
-
 			const int adjs[8] = {	(row - 1) * width + (col - 1),  // top left
 									(row - 1) * width + (col    ),	// top
 									(row - 1) * width + (col + 1),	// top right
@@ -364,13 +352,14 @@ void GOL_grid::save_state() {
 		cout.flush();
 	#endif
 
+		// for every non-padded row
 	for (int row = 1; row < height - 1; row++) {
 
 			// write the first row element without a comma
 		const int index = row * width + 1;
 		this->ss << grid[index];
 
-			// write every other column
+			// write every other non-padded column
 		for (int col = 2; col < width - 1; col++) {
 			const int index = row * width + col;
 			this->ss << "," << grid[index];
@@ -383,10 +372,8 @@ void GOL_grid::save_state() {
 	const string name = to_string(iteration) + "-" + to_string(id) + ".csv";
 	file.open(directory + name, ofstream::out);
 
-		// write the string stream
+		// write the string stream and close the file
 	file << ss.rdbuf();
-
-		// close file
 	file.close();
 
 	#ifdef to_print
@@ -423,36 +410,44 @@ void GOL_grid::find_targets() {
 }
 
 	
+	// send boundary data to adjasent processors
 void GOL_grid::send_receive() {
 
-	// assume non-periodic for now
-	// neighbour order [TL, T, TR, L, R, BL, B, BR]
-	// send order [TL, TR, BL, BR]
+	// communcations order [TL, T, TR, L, R, BL, B, BR]
+	// receive order is the reverse
 
 	MPI_Request reqs[8];
 	MPI_Request dummy_req;
 	MPI_Datatype types[8] = { MPI_BYTE, this->Row, MPI_BYTE , this->Col, this->Col,
 							  MPI_BYTE, this->Row, MPI_BYTE };
 
+		// for every neighbour
 	for (int i = 0; i < 8; i++) {
-		const int targ = neighbours[i];
-		if (targ != -1) {
+
+			// if neighbour exists
+		if (neighbours[i] != -1) {
 
 			#ifdef to_print_all
 				cout << id << "-sending(" << i << " to " << targ << ")\n";
 				cout.flush();
 			#endif
 
-			MPI_Isend(grid + send_offset[i], 1, types[i], targ, i, MPI_COMM_WORLD, &dummy_req);
+				// send data to them
+			MPI_Isend(grid + send_offset[i], 1, types[i], neighbours[i], 
+				i, MPI_COMM_WORLD, &dummy_req);
 
 			#ifdef to_print_all
 				cout << id << "-receiving(" << i << " from " << neighbours[i] << ")\n";
 				cout.flush();
 			#endif
 
-			MPI_Irecv(grid + recv_offset[i], 1, types[i], targ, 7-i, MPI_COMM_WORLD, reqs + i);
+				// wait to recieve from them on the correct communcation tag (reverse order)
+			MPI_Irecv(grid + recv_offset[i], 1, types[i], neighbours[i], 
+				7-i, MPI_COMM_WORLD, reqs + i);
 
 		}
+		
+			// no neighbour to send to (sink boudnary)
 		else {
 
 			#ifdef to_print_all

@@ -7,6 +7,7 @@
 #include <sstream>	// for a buffer when writing to file
 #include <string>	// for coverting variables to string
 #include <assert.h> // for debugging
+#include <math.h>   // for sqrt on CX1
 
 using namespace std;
 

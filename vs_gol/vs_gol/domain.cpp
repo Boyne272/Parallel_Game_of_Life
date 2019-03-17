@@ -49,6 +49,7 @@ void still_2(bool* grid, int grid_width, int row, int col) {
 }
 
 
+	// place a glider to check boundaries
 void glider(bool* grid, int grid_width, int row, int col) {
 	for (int i : {(row - 1) * grid_width + col - 1,
 				  (row + 1) * grid_width + col,
@@ -58,6 +59,7 @@ void glider(bool* grid, int grid_width, int row, int col) {
 	grid[i] = true;
 }
 
+	// fill each corner to check communcations
 void fill_corns(bool* grid, int grid_width, int grid_height) {
 	grid[grid_width + 1] = true;
 	grid[2*grid_width - 2] = true;

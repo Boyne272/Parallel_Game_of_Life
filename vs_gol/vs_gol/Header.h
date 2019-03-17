@@ -11,7 +11,7 @@
 
 using namespace std;
 
-	// domain.cpp functions
+	// domain.cpp functions for intalising the sub-grids
 void init_random(bool* grid, int rows, int cols);
 void blinker_1(bool* grid, int grid_width, int row, int col);
 void blinker_2(bool* grid, int grid_width, int row, int col);

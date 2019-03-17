@@ -1,6 +1,6 @@
 MAKE = make
 TARGET = GOL.exe
-SOURCE = main.cpp
+SOURCE = main.cpp domain.cpp GOL_grid.cpp
 
 default:
-	mpicxx -o $(TARGET) $(SOURCE) -std=gnu++0x
+	mpicxx -std=gnu++0x -o $(TARGET) $(SOURCE)

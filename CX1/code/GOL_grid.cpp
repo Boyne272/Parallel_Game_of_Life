@@ -1,8 +1,9 @@
 #include "Header.h"
 #include "GOL_grid.h"
-#define to_print
+//#define to_print
 //#define to_print_all
 //#define synch
+#define CX1
 
 	// finds the optimal partitioning with the requierment that
 	// every section has matching edge neighbours
@@ -246,10 +247,14 @@ GOL_grid::~GOL_grid() {
 void GOL_grid::create_config() {
 		
 		// find the current date as a directory name
-	time_t now;
-	time(&now);
-	char date[26];
-	ctime_s(date, 26, &now);
+	#ifdef CX1
+		time_t now;
+		time(&now);
+		char date[26];
+		ctime_s(date, 26, &now);
+	#else
+		char date[26] = "not avaibale on CX1 :( \n";
+	#endif
 
 		// what to put in the config file
 	ss << "Date \t\t\t" << date
@@ -266,8 +271,10 @@ void GOL_grid::create_config() {
 	file.close();
 
 		// print
-	cout << id << "-saved(config)\n";
-	cout.flush();
+	#ifdef to_print
+		cout << id << "-saved(config)\n";
+		cout.flush();
+	#endif // to_print
 }
 
 

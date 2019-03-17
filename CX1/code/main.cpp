@@ -1,6 +1,7 @@
 #include "Header.h"
 #include "GOL_grid.h"
 //#define synch
+#define CX1
 
 int main(int argc, char *argv[]) {
 
@@ -29,7 +30,6 @@ int main(int argc, char *argv[]) {
 	GOL_grid subgrid(id, p, width, height, periodic, save_directory);
 
 	init_random(subgrid.grid, subgrid.height, subgrid.width);
-
 	//blinker_1(subgrid.grid, subgrid.width, 4, 4);
 	//blinker_2(subgrid.grid, subgrid.width, 12, 4);
 	//still_1(subgrid.grid, subgrid.width, 4, 12);
@@ -77,8 +77,16 @@ int main(int argc, char *argv[]) {
 		ofstream file;
 		file.open(save_directory + "_config.txt", ofstream::app);
 		file << "Iterations \t\t" << iterations << "\n"
-			 << "Run time \t\t" << time_taken << "s\n";
+			 << "Run time \t\t" << time_taken << "\n";
 		file.close();
+
+		#ifdef CX1 // record the time in the current directory times.csv file
+			file.open("times.csv", ofstream::app);
+			file << p << "," << width << "," << height << "," << iterations << ","
+				<< periodic << "," << time_taken << "\n";
+			file.close();
+		#endif // CX1
+
 	}
 
 	// exit program
