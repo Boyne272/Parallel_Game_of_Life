@@ -1,6 +1,6 @@
-Date 			Sun Mar 17 10:23:02 2019
+Date 			Sun Mar 17 17:16:07 2019
 Processors 		4
-Dimensions 		(150, 200)
+Dimensions 		(25, 25)
 Partitions 		(2, 2)
-Iterations 		200
-Run time 		14.191
+Iterations 		50
+Run time 		0.296554
