@@ -1,3 +1,5 @@
 "# these are local runs used to debug			",,,,,
 nodes,width,height,iterations,periodic,time
 4,200,150,200,1,14.191
+4,25,25,50,1,0.296554
+4,1000,1000,100,1,141.007

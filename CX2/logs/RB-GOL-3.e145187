@@ -1,0 +1,3 @@
+Currently Loaded Modulefiles:
+ 1) intel-suite/2017.6(default)   2) mpi/intel-2018(default)  
+GOL.exe: GOL_grid.cpp:267: void GOL_grid::create_config(): Assertion `file.is_open() && "could not find the given directory"' failed.

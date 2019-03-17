@@ -1,0 +1,24 @@
+Default modules loaded
+
+pwd= /rds/general/user/rmb115/home/game_of_life
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 10000 10000 100 1 results_buffer/
+# mpiexec: 64 ranks allocated via PBS select
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+Time to run: 34.1827s
+finished
+ 
+Imperial College London HPC Service
+-----------------------------------
+Job RB-GOL-3, jobid 145188.cx2, username rmb115 - end of execution at 21:41:58 Sun 17/03/19 on system r1i1n17
+ 

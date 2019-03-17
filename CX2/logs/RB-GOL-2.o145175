@@ -1,0 +1,1483 @@
+Default modules loaded
+
+pwd= /rds/general/user/rmb115/home/game_of_life
+size:1000 core:25 repeat:1 dynamic
+mpiexec -n 25 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 25
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24)
+Time to run: 6.64426s
+Date 			not avaibale on CX1 :( 
+Processors 		25
+Dimensions 		(1000, 1000)
+Partitions 		(5, 5)
+Iterations 		100
+Run time 		6.64426
+size:1000 core:36 repeat:1 dynamic
+mpiexec -n 36 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 36
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35)
+Time to run: 2.20158s
+Date 			not avaibale on CX1 :( 
+Processors 		36
+Dimensions 		(1000, 1000)
+Partitions 		(6, 6)
+Iterations 		100
+Run time 		2.20158
+size:1000 core:49 repeat:1 dynamic
+mpiexec -n 49 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 49
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48)
+Time to run: 2.47305s
+Date 			not avaibale on CX1 :( 
+Processors 		49
+Dimensions 		(1000, 1000)
+Partitions 		(7, 7)
+Iterations 		100
+Run time 		2.47305
+size:1000 core:64 repeat:1 dynamic
+mpiexec -n 64 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 64
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+Time to run: 3.5887s
+Date 			not avaibale on CX1 :( 
+Processors 		64
+Dimensions 		(1000, 1000)
+Partitions 		(8, 8)
+Iterations 		100
+Run time 		3.5887
+size:1000 core:81 repeat:1 dynamic
+mpiexec -n 81 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 81
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80)
+Time to run: 3.0457s
+Date 			not avaibale on CX1 :( 
+Processors 		81
+Dimensions 		(1000, 1000)
+Partitions 		(9, 9)
+Iterations 		100
+Run time 		3.0457
+size:1000 core:100 repeat:1 dynamic
+mpiexec -n 100 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 100
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99)
+Time to run: 2.30029s
+Date 			not avaibale on CX1 :( 
+Processors 		100
+Dimensions 		(1000, 1000)
+Partitions 		(10, 10)
+Iterations 		100
+Run time 		2.30029
+size:1000 core:121 repeat:1 dynamic
+mpiexec -n 121 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 121
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120)
+Time to run: 2.5168s
+Date 			not avaibale on CX1 :( 
+Processors 		121
+Dimensions 		(1000, 1000)
+Partitions 		(11, 11)
+Iterations 		100
+Run time 		2.5168
+size:2000 core:25 repeat:1 dynamic
+mpiexec -n 25 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 25
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24)
+Time to run: 3.12342s
+Date 			not avaibale on CX1 :( 
+Processors 		25
+Dimensions 		(2000, 2000)
+Partitions 		(5, 5)
+Iterations 		100
+Run time 		3.12342
+size:2000 core:36 repeat:1 dynamic
+mpiexec -n 36 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 36
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35)
+Time to run: 3.01792s
+Date 			not avaibale on CX1 :( 
+Processors 		36
+Dimensions 		(2000, 2000)
+Partitions 		(6, 6)
+Iterations 		100
+Run time 		3.01792
+size:2000 core:49 repeat:1 dynamic
+mpiexec -n 49 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 49
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48)
+Time to run: 2.26436s
+Date 			not avaibale on CX1 :( 
+Processors 		49
+Dimensions 		(2000, 2000)
+Partitions 		(7, 7)
+Iterations 		100
+Run time 		2.26436
+size:2000 core:64 repeat:1 dynamic
+mpiexec -n 64 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 64
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+Time to run: 2.27563s
+Date 			not avaibale on CX1 :( 
+Processors 		64
+Dimensions 		(2000, 2000)
+Partitions 		(8, 8)
+Iterations 		100
+Run time 		2.27563
+size:2000 core:81 repeat:1 dynamic
+mpiexec -n 81 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 81
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80)
+Time to run: 1.82898s
+Date 			not avaibale on CX1 :( 
+Processors 		81
+Dimensions 		(2000, 2000)
+Partitions 		(9, 9)
+Iterations 		100
+Run time 		1.82898
+size:2000 core:100 repeat:1 dynamic
+mpiexec -n 100 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 100
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99)
+Time to run: 1.75682s
+Date 			not avaibale on CX1 :( 
+Processors 		100
+Dimensions 		(2000, 2000)
+Partitions 		(10, 10)
+Iterations 		100
+Run time 		1.75682
+size:2000 core:121 repeat:1 dynamic
+mpiexec -n 121 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 121
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120)
+Time to run: 1.60483s
+Date 			not avaibale on CX1 :( 
+Processors 		121
+Dimensions 		(2000, 2000)
+Partitions 		(11, 11)
+Iterations 		100
+Run time 		1.60483
+size:5000 core:25 repeat:1 dynamic
+mpiexec -n 25 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 25
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24)
+Time to run: 18.4398s
+Date 			not avaibale on CX1 :( 
+Processors 		25
+Dimensions 		(5000, 5000)
+Partitions 		(5, 5)
+Iterations 		100
+Run time 		18.4398
+size:5000 core:36 repeat:1 dynamic
+mpiexec -n 36 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 36
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35)
+Time to run: 13.7992s
+Date 			not avaibale on CX1 :( 
+Processors 		36
+Dimensions 		(5000, 5000)
+Partitions 		(6, 6)
+Iterations 		100
+Run time 		13.7992
+size:5000 core:49 repeat:1 dynamic
+mpiexec -n 49 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 49
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48)
+Time to run: 10.4065s
+Date 			not avaibale on CX1 :( 
+Processors 		49
+Dimensions 		(5000, 5000)
+Partitions 		(7, 7)
+Iterations 		100
+Run time 		10.4065
+size:5000 core:64 repeat:1 dynamic
+mpiexec -n 64 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 64
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+Time to run: 8.44173s
+Date 			not avaibale on CX1 :( 
+Processors 		64
+Dimensions 		(5000, 5000)
+Partitions 		(8, 8)
+Iterations 		100
+Run time 		8.44173
+size:5000 core:81 repeat:1 dynamic
+mpiexec -n 81 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 81
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80)
+Time to run: 6.99304s
+Date 			not avaibale on CX1 :( 
+Processors 		81
+Dimensions 		(5000, 5000)
+Partitions 		(9, 9)
+Iterations 		100
+Run time 		6.99304
+size:5000 core:100 repeat:1 dynamic
+mpiexec -n 100 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 100
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99)
+Time to run: 5.68163s
+Date 			not avaibale on CX1 :( 
+Processors 		100
+Dimensions 		(5000, 5000)
+Partitions 		(10, 10)
+Iterations 		100
+Run time 		5.68163
+size:5000 core:121 repeat:1 dynamic
+mpiexec -n 121 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 121
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120)
+Time to run: 4.98055s
+Date 			not avaibale on CX1 :( 
+Processors 		121
+Dimensions 		(5000, 5000)
+Partitions 		(11, 11)
+Iterations 		100
+Run time 		4.98055
+size:1000 core:25 repeat:2 dynamic
+mpiexec -n 25 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 25
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24)
+Time to run: 1.36678s
+Date 			not avaibale on CX1 :( 
+Processors 		25
+Dimensions 		(1000, 1000)
+Partitions 		(5, 5)
+Iterations 		100
+Run time 		1.36678
+size:1000 core:36 repeat:2 dynamic
+mpiexec -n 36 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 36
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35)
+Time to run: 1.276s
+Date 			not avaibale on CX1 :( 
+Processors 		36
+Dimensions 		(1000, 1000)
+Partitions 		(6, 6)
+Iterations 		100
+Run time 		1.276
+size:1000 core:49 repeat:2 dynamic
+mpiexec -n 49 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 49
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48)
+Time to run: 1.27678s
+Date 			not avaibale on CX1 :( 
+Processors 		49
+Dimensions 		(1000, 1000)
+Partitions 		(7, 7)
+Iterations 		100
+Run time 		1.27678
+size:1000 core:64 repeat:2 dynamic
+mpiexec -n 64 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 64
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+Time to run: 1.06105s
+Date 			not avaibale on CX1 :( 
+Processors 		64
+Dimensions 		(1000, 1000)
+Partitions 		(8, 8)
+Iterations 		100
+Run time 		1.06105
+size:1000 core:81 repeat:2 dynamic
+mpiexec -n 81 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 81
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80)
+Time to run: 0.939977s
+Date 			not avaibale on CX1 :( 
+Processors 		81
+Dimensions 		(1000, 1000)
+Partitions 		(9, 9)
+Iterations 		100
+Run time 		0.939977
+size:1000 core:100 repeat:2 dynamic
+mpiexec -n 100 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 100
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99)
+Time to run: 1.15646s
+Date 			not avaibale on CX1 :( 
+Processors 		100
+Dimensions 		(1000, 1000)
+Partitions 		(10, 10)
+Iterations 		100
+Run time 		1.15646
+size:1000 core:121 repeat:2 dynamic
+mpiexec -n 121 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 121
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120)
+Time to run: 1.17678s
+Date 			not avaibale on CX1 :( 
+Processors 		121
+Dimensions 		(1000, 1000)
+Partitions 		(11, 11)
+Iterations 		100
+Run time 		1.17678
+size:2000 core:25 repeat:2 dynamic
+mpiexec -n 25 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 25
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24)
+Time to run: 3.31712s
+Date 			not avaibale on CX1 :( 
+Processors 		25
+Dimensions 		(2000, 2000)
+Partitions 		(5, 5)
+Iterations 		100
+Run time 		3.31712
+size:2000 core:36 repeat:2 dynamic
+mpiexec -n 36 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 36
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35)
+Time to run: 2.83253s
+Date 			not avaibale on CX1 :( 
+Processors 		36
+Dimensions 		(2000, 2000)
+Partitions 		(6, 6)
+Iterations 		100
+Run time 		2.83253
+size:2000 core:49 repeat:2 dynamic
+mpiexec -n 49 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 49
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48)
+Time to run: 2.33637s
+Date 			not avaibale on CX1 :( 
+Processors 		49
+Dimensions 		(2000, 2000)
+Partitions 		(7, 7)
+Iterations 		100
+Run time 		2.33637
+size:2000 core:64 repeat:2 dynamic
+mpiexec -n 64 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 64
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+Time to run: 2.22161s
+Date 			not avaibale on CX1 :( 
+Processors 		64
+Dimensions 		(2000, 2000)
+Partitions 		(8, 8)
+Iterations 		100
+Run time 		2.22161
+size:2000 core:81 repeat:2 dynamic
+mpiexec -n 81 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 81
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80)
+Time to run: 1.87011s
+Date 			not avaibale on CX1 :( 
+Processors 		81
+Dimensions 		(2000, 2000)
+Partitions 		(9, 9)
+Iterations 		100
+Run time 		1.87011
+size:2000 core:100 repeat:2 dynamic
+mpiexec -n 100 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 100
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99)
+Time to run: 2.00909s
+Date 			not avaibale on CX1 :( 
+Processors 		100
+Dimensions 		(2000, 2000)
+Partitions 		(10, 10)
+Iterations 		100
+Run time 		2.00909
+size:2000 core:121 repeat:2 dynamic
+mpiexec -n 121 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 121
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120)
+Time to run: 1.53274s
+Date 			not avaibale on CX1 :( 
+Processors 		121
+Dimensions 		(2000, 2000)
+Partitions 		(11, 11)
+Iterations 		100
+Run time 		1.53274
+size:5000 core:25 repeat:2 dynamic
+mpiexec -n 25 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 25
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24)
+Time to run: 18.0313s
+Date 			not avaibale on CX1 :( 
+Processors 		25
+Dimensions 		(5000, 5000)
+Partitions 		(5, 5)
+Iterations 		100
+Run time 		18.0313
+size:5000 core:36 repeat:2 dynamic
+mpiexec -n 36 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 36
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35)
+Time to run: 14.0321s
+Date 			not avaibale on CX1 :( 
+Processors 		36
+Dimensions 		(5000, 5000)
+Partitions 		(6, 6)
+Iterations 		100
+Run time 		14.0321
+size:5000 core:49 repeat:2 dynamic
+mpiexec -n 49 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 49
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48)
+Time to run: 11.0626s
+Date 			not avaibale on CX1 :( 
+Processors 		49
+Dimensions 		(5000, 5000)
+Partitions 		(7, 7)
+Iterations 		100
+Run time 		11.0626
+size:5000 core:64 repeat:2 dynamic
+mpiexec -n 64 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 64
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+Time to run: 8.64888s
+Date 			not avaibale on CX1 :( 
+Processors 		64
+Dimensions 		(5000, 5000)
+Partitions 		(8, 8)
+Iterations 		100
+Run time 		8.64888
+size:5000 core:81 repeat:2 dynamic
+mpiexec -n 81 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 81
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80)
+Time to run: 7.42765s
+Date 			not avaibale on CX1 :( 
+Processors 		81
+Dimensions 		(5000, 5000)
+Partitions 		(9, 9)
+Iterations 		100
+Run time 		7.42765
+size:5000 core:100 repeat:2 dynamic
+mpiexec -n 100 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 100
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99)
+Time to run: 6.30251s
+Date 			not avaibale on CX1 :( 
+Processors 		100
+Dimensions 		(5000, 5000)
+Partitions 		(10, 10)
+Iterations 		100
+Run time 		6.30251
+size:5000 core:121 repeat:2 dynamic
+mpiexec -n 121 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 121
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120)
+Time to run: 4.88193s
+Date 			not avaibale on CX1 :( 
+Processors 		121
+Dimensions 		(5000, 5000)
+Partitions 		(11, 11)
+Iterations 		100
+Run time 		4.88193
+size:1000 core:25 repeat:3 dynamic
+mpiexec -n 25 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 25
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24)
+Time to run: 1.50144s
+Date 			not avaibale on CX1 :( 
+Processors 		25
+Dimensions 		(1000, 1000)
+Partitions 		(5, 5)
+Iterations 		100
+Run time 		1.50144
+size:1000 core:36 repeat:3 dynamic
+mpiexec -n 36 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 36
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35)
+Time to run: 1.31755s
+Date 			not avaibale on CX1 :( 
+Processors 		36
+Dimensions 		(1000, 1000)
+Partitions 		(6, 6)
+Iterations 		100
+Run time 		1.31755
+size:1000 core:49 repeat:3 dynamic
+mpiexec -n 49 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 49
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48)
+Time to run: 1.18172s
+Date 			not avaibale on CX1 :( 
+Processors 		49
+Dimensions 		(1000, 1000)
+Partitions 		(7, 7)
+Iterations 		100
+Run time 		1.18172
+size:1000 core:64 repeat:3 dynamic
+mpiexec -n 64 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 64
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+Time to run: 1.2022s
+Date 			not avaibale on CX1 :( 
+Processors 		64
+Dimensions 		(1000, 1000)
+Partitions 		(8, 8)
+Iterations 		100
+Run time 		1.2022
+size:1000 core:81 repeat:3 dynamic
+mpiexec -n 81 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 81
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80)
+Time to run: 0.934536s
+Date 			not avaibale on CX1 :( 
+Processors 		81
+Dimensions 		(1000, 1000)
+Partitions 		(9, 9)
+Iterations 		100
+Run time 		0.934536
+size:1000 core:100 repeat:3 dynamic
+mpiexec -n 100 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 100
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99)
+Time to run: 0.947391s
+Date 			not avaibale on CX1 :( 
+Processors 		100
+Dimensions 		(1000, 1000)
+Partitions 		(10, 10)
+Iterations 		100
+Run time 		0.947391
+size:1000 core:121 repeat:3 dynamic
+mpiexec -n 121 /rds/general/user/rmb115/home/game_of_life/GOL.exe 1000 1000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 1000 1000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 121
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120)
+Time to run: 0.885193s
+Date 			not avaibale on CX1 :( 
+Processors 		121
+Dimensions 		(1000, 1000)
+Partitions 		(11, 11)
+Iterations 		100
+Run time 		0.885193
+size:2000 core:25 repeat:3 dynamic
+mpiexec -n 25 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 25
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24)
+Time to run: 3.55922s
+Date 			not avaibale on CX1 :( 
+Processors 		25
+Dimensions 		(2000, 2000)
+Partitions 		(5, 5)
+Iterations 		100
+Run time 		3.55922
+size:2000 core:36 repeat:3 dynamic
+mpiexec -n 36 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 36
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35)
+Time to run: 2.96873s
+Date 			not avaibale on CX1 :( 
+Processors 		36
+Dimensions 		(2000, 2000)
+Partitions 		(6, 6)
+Iterations 		100
+Run time 		2.96873
+size:2000 core:49 repeat:3 dynamic
+mpiexec -n 49 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 49
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48)
+Time to run: 2.45119s
+Date 			not avaibale on CX1 :( 
+Processors 		49
+Dimensions 		(2000, 2000)
+Partitions 		(7, 7)
+Iterations 		100
+Run time 		2.45119
+size:2000 core:64 repeat:3 dynamic
+mpiexec -n 64 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 64
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+Time to run: 2.14987s
+Date 			not avaibale on CX1 :( 
+Processors 		64
+Dimensions 		(2000, 2000)
+Partitions 		(8, 8)
+Iterations 		100
+Run time 		2.14987
+size:2000 core:81 repeat:3 dynamic
+mpiexec -n 81 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 81
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80)
+Time to run: 1.90286s
+Date 			not avaibale on CX1 :( 
+Processors 		81
+Dimensions 		(2000, 2000)
+Partitions 		(9, 9)
+Iterations 		100
+Run time 		1.90286
+size:2000 core:100 repeat:3 dynamic
+mpiexec -n 100 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 100
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99)
+Time to run: 1.70228s
+Date 			not avaibale on CX1 :( 
+Processors 		100
+Dimensions 		(2000, 2000)
+Partitions 		(10, 10)
+Iterations 		100
+Run time 		1.70228
+size:2000 core:121 repeat:3 dynamic
+mpiexec -n 121 /rds/general/user/rmb115/home/game_of_life/GOL.exe 2000 2000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 2000 2000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 121
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63)
+(r1i2n14.ib0.cx2.hpc.ic.ac.uk:64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95)
+(r1i2n9.ib0.cx2.hpc.ic.ac.uk:96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120)
+Time to run: 1.57239s
+Date 			not avaibale on CX1 :( 
+Processors 		121
+Dimensions 		(2000, 2000)
+Partitions 		(11, 11)
+Iterations 		100
+Run time 		1.57239
+size:5000 core:25 repeat:3 dynamic
+mpiexec -n 25 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 25
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24)
+Time to run: 18.5284s
+Date 			not avaibale on CX1 :( 
+Processors 		25
+Dimensions 		(5000, 5000)
+Partitions 		(5, 5)
+Iterations 		100
+Run time 		18.5284
+size:5000 core:36 repeat:3 dynamic
+mpiexec -n 36 /rds/general/user/rmb115/home/game_of_life/GOL.exe 5000 5000 100 1 results_buffer/
+
+# mpiexec: full path to program is /rds/general/user/rmb115/home/game_of_life/GOL.exe
+# mpiexec: program arguments are: 5000 5000 100 1 results_buffer/
+# mpiexec: 128 ranks allocated via PBS select, but -n argument reduces that to 36
+# mpiexec: 1 OpenMP threads / rank allocated by PBS select
+# mpiexec: Job has exclusive use of the allocated nodes. Enabling process-pinning
+# mpiexec: machinefile configured as:
+r1i1n17.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n10.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n14.ib0.cx2.hpc.ic.ac.uk:32
+r1i2n9.ib0.cx2.hpc.ic.ac.uk:32
+#
+# mpiexec: launching program...
+#
+(r1i1n17.ib0.cx2.hpc.ic.ac.uk:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31)
+(r1i2n10.ib0.cx2.hpc.ic.ac.uk:32,33,34,35)
+Time to run: 14.4744s
+ 
+Imperial College London HPC Service
+-----------------------------------
+Job RB-GOL-2, jobid 145175.cx2, username rmb115 - end of execution at 19:02:37 Sun 17/03/19 on system r1i1n17
+ 

@@ -1,0 +1,40 @@
+#PBS -N RB-GOL-3
+#PBS -l walltime=02:00:00
+#PBS -l select=2:ncpus=32:mpiprocs=32:mem=10GB
+
+# vars
+CORES=(8 8);
+REPEATS=$(seq 25);
+SIZES=(1000 2000 5000 10000);
+ITERATIONS=50;
+
+# setup
+module load intel-suite
+module load mpi
+cd $PBS_O_WORKDIR
+echo pwd= $(pwd)
+
+# run
+for i in ${REPEATS[@]}
+do
+  for size in ${SIZES[@]}
+  do
+    for core in ${CORES[@]}
+    do
+	  
+	  # print what is running
+	  echo size:$size core:$core repeat:$i dynamic;
+      	  echo "mpiexec -n $core /rds/general/user/rmb115/home/game_of_life/GOL.exe $size $size $ITERATIONS 1 results_buffer/"
+	  
+	  # run
+      	  mpiexec -n $core /rds/general/user/rmb115/home/game_of_life/GOL.exe $size $size $ITERATIONS 1 results_buffer/
+	 
+	  # move the resultant config file
+	  mv results_buffer/_config.txt time_configs/$core-$size-$i.txt;
+	  cat time_configs/$core-$size-$i.txt;
+	  
+    done
+  done 
+done
+
+echo finished;

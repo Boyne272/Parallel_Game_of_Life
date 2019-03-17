@@ -1,0 +1,3 @@
+Currently Loaded Modulefiles:
+ 1) intel-suite/2017.6(default)   2) mpi/intel-2018(default)  
+=>> PBS: job killed: mem 6958276kb exceeded limit 4194304kb

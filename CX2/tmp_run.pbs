@@ -1,0 +1,16 @@
+#PBS -N RB-GOL-3
+#PBS -l walltime=02:00:00
+#PBS -l select=2:ncpus=32:mpiprocs=32:mem=10GB
+
+# vars
+
+# setup
+module load intel-suite
+module load mpi
+cd $PBS_O_WORKDIR
+echo pwd= $(pwd)
+
+mpiexec -n 64 /rds/general/user/rmb115/home/game_of_life/GOL.exe 10000 10000 100 1 results_buffer/
+	 
+	  
+echo finished;
