@@ -1,7 +1,10 @@
-# ACSE 6.2 - Parallel Game Of Life with MPI
+## Parallel Game Of Life with MPI
+
+Using MPI the famous cellular automaton (game of life) model has been implemented in a scalable manner. It has been tested on up to 128 processors on the imperial CX1 computer cluster with runtime improvements of 80%.
+
 12th to 17th March 2019
 
-By Richard Boyne CID 01057503
+By Richard Boyne (GitHub:Boyne272, CID: 01057503)
 
 ## Repsoitory Structure
 * C++ code is kept in a visual studio project within vs\_gol/ with the raw .cpp and .h files in vs\_gol/vs\_gol/
@@ -17,7 +20,6 @@ By Richard Boyne CID 01057503
 
 * HPC code is in CX2/ specifically this has a copy of all code, a makefile for gcc compilation on Linux and a pbs script for batch solving on CX2. No data other than run times from CX2 was kept due to its size (around 5~10 GB per simulation). The raw time data can be seen in the results directory.
 
-## Notes to the Examiner
-There is a short explanation of code features in the report so I suggest reading that first before looking at the code. All code is commented and as normal here is an appropriate meme:
+## Appropriate Meme:
 
 <img src="meme.jpg" alt="waiting meme">
