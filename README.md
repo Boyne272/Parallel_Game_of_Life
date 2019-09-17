@@ -1,6 +1,6 @@
 ## Parallel Game Of Life with MPI
 
-Using MPI the famous cellular automaton (game of life) model has been implemented in a scalable manner. It has been tested on up to 128 processors on the imperial CX1 computer cluster with runtime improvements of 80%.
+Using MPI the famous cellular automaton (game of life) model has been implemented in a scalable manner. It has been tested on up to 128 processors on the imperial CX1 computer cluster with runtime improvements of 80%. Explaintion of the code and results can be found in Report.pdf.
 
 12th to 17th March 2019
 
